@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Devices from './Components/Devices/Devices';
+import Header from './Components/Header/Header';
+import Rooms from './Components/Rooms/Rooms';
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+        <Header />
+        <Rooms />
+        <Devices />
+        <Text style={styles.deviceCount}>Total Devices On: 1</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,9 +19,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    alignItems: 'flexStart',
+    justifyContent: 'flexStart',
+    },
+  deviceCount: {
+    fontWeight:'bold',
+    paddingHorizontal: '10px',
+  }
 });
+
+export default App;
